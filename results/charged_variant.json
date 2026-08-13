@@ -1,0 +1,36 @@
+{
+ "composition": "50:50 (registered)",
+ "budget_S_per_N": 100,
+ "probe_m": 20,
+ "signal": "coefficient of variation of probe costs; no reference tour",
+ "solvers": {
+  "AM": {
+   "d_charged": 3.3936199221918715,
+   "ci95": [
+    0.6087944106896389,
+    7.563972838731108
+   ]
+  },
+  "SYMNCO": {
+   "d_charged": 4.587517916819808,
+   "ci95": [
+    1.6225492854944803,
+    10.540854744035425
+   ]
+  },
+  "POMO": {
+   "d_charged": -0.3908188339015882,
+   "ci95": [
+    -1.0020661054867899,
+    0.1260601639545667
+   ]
+  }
+ },
+ "probe_sensitivity_AM": {
+  "5": 3.359,
+  "10": 3.758,
+  "20": 3.394,
+  "40": 2.812
+ },
+ "note": "exploratory/descriptive; not pre-registered; no test reported"
+}
