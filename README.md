@@ -1,19 +1,32 @@
-# Auditing test-time budget allocation for neural combinatorial optimization
+# Test-time budget allocation for neural combinatorial optimization
 
-Code and data for the preprint *"Sampling Luck Masquerades as Allocation Gain:
-Auditing Test-Time Budget Allocation for Neural Combinatorial Optimization"* —
-[arXiv:2608.13087](https://arxiv.org/abs/2608.13087). This repository contains
-the cost arrays, the analysis pipeline and the recorded result files; the paper
-itself is distributed as a preprint.
+Companion repository for two papers. Each is distributed as a preprint; this
+repository holds the cost arrays, the analysis pipelines and the recorded
+result files.
+
+**Paper 1 — Sampling Luck Masquerades as Allocation Gain**
+([arXiv:2608.13087](https://arxiv.org/abs/2608.13087)). An audit of in-sample
+selection bias in test-time allocation for neural combinatorial optimization.
+Its material is at the root of this repository, in the layout the paper's
+appendix describes.
+
+**Paper 2 — Spread and Scale: What Determines Whether Test-Time Budget
+Allocation Pays** (preprint forthcoming). A pre-registered study of which
+workload property predicts whether allocation pays. Its material, including
+both pre-registration documents, is in [`paper2/`](paper2/).
 
 ## What is here
 
 ```
-code/     analysis pipeline, numbered in execution order
-data/     raw per-instance solution costs (12 .npz arrays)
-results/  the six files every number in the paper is traced to
-figures/  the four figures as published
+code/     paper 1 — analysis pipeline, numbered in execution order
+data/     paper 1 — raw per-instance solution costs (12 .npz arrays)
+results/  paper 1 — the six files every number in the paper is traced to
+figures/  paper 1 — the four figures as published
+paper2/   paper 2 — code, arrays, pre-registrations, figures, results
 ```
+
+Paper 1's directories stay at the root so that the paths its appendix cites keep
+resolving.
 
 ## Data
 

@@ -1,0 +1,2 @@
+analysis_confirm2.py  sha256 f4c0a44c9af2ae6e33c7a81372428a79e3024511e690a130c3cb54d9e1e99e6d
+동결: 수집 완료 전 작성, 실행 시 미수정
