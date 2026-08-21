@@ -1,8 +1,10 @@
 # Auditing test-time budget allocation for neural combinatorial optimization
 
-Code and data for the preprint *"Sampling Luck Masquerades as Allocation Gain"*
-(link: TBD). This repository contains the cost arrays, the analysis pipeline and
-the recorded result files; the paper itself is distributed as a preprint.
+Code and data for the preprint *"Sampling Luck Masquerades as Allocation Gain:
+Auditing Test-Time Budget Allocation for Neural Combinatorial Optimization"* —
+[arXiv:2608.13087](https://arxiv.org/abs/2608.13087). This repository contains
+the cost arrays, the analysis pipeline and the recorded result files; the paper
+itself is distributed as a preprint.
 
 ## What is here
 
