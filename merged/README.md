@@ -14,6 +14,7 @@ The preprints estimated best-of-k curves by averaging random orderings of the st
 reanalysis.py      paper-1 headroom; paper-2 spread/level/composition endpoints; label rule
 reanalysis2.py     absolute-unit scale check (test U); charged probe rules
 paired_label.py    paired bootstrap: probe rule minus label rule
+estimator_sim.py   estimator accuracy and null at the paper settings (Appendix B)
 make_figures.py    the five figures of the merged paper
 results/           JSON output of the scripts above
 figures/           figures (.pdf, .png)
