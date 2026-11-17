@@ -11,9 +11,15 @@ Its material is at the root of this repository, in the layout the paper's
 appendix describes.
 
 **Paper 2 — Spread and Scale: What Determines Whether Test-Time Budget
-Allocation Pays** (preprint forthcoming). A pre-registered study of which
+Allocation Pays** ([arXiv:2609.27917](https://arxiv.org/abs/2609.27917)). A pre-registered study of which
 workload property predicts whether allocation pays. Its material, including
 both pre-registration documents, is in [`paper2/`](paper2/).
+
+**Merged paper — When Does Reallocating a Sampling Budget Pay? Instance-wise
+Allocation for Neural Routing Solvers** (in preparation). It supersedes both
+preprints and re-analyses their stored arrays with exact best-of-k curves. That
+re-analysis corrects paper 1's in-distribution conclusion: the true headroom is
+1.1–1.6%, not zero. The code, results and figures are in [`merged/`](merged/).
 
 ## What is here
 
@@ -23,6 +29,7 @@ data/     paper 1 — raw per-instance solution costs (12 .npz arrays)
 results/  paper 1 — the six files every number in the paper is traced to
 figures/  paper 1 — the four figures as published
 paper2/   paper 2 — code, arrays, pre-registrations, figures, results
+merged/   merged paper — exact-curve re-analysis of both preprints
 ```
 
 Paper 1's directories stay at the root so that the paths its appendix cites keep
