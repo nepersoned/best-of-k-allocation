@@ -17,6 +17,11 @@ paired_label.py    paired bootstrap: probe rule minus label rule
 estimator_sim.py   estimator accuracy and null at the paper settings (Appendix B)
 sh_baseline.py     successive-halving baseline vs the probe rule
 extras.py          tour-length translation, budget sweep, disjoint-workload test
+fit_baselines.py   power-law probe-and-fit allocation (one- and two-stage) vs the probe rule
+ls_collect.py      regenerates the mixed collection's instances and draws 400 samples with tours (CPU, rl4co)
+ls_analysis.py     reallocation vs 2-opt on the best sample
+ls_curves.py       exact headroom on curves of 2-opt-improved samples
+ls_tours/          regenerated instances, sampled costs and tours, 2-opt-improved costs
 make_figures.py    the five figures of the merged paper
 results/           JSON output of the scripts above
 figures/           figures (.pdf, .png)
