@@ -1,0 +1,61 @@
+{
+ "lengths": {
+  "AM": {
+   "indist": {
+    "uniform_gap": 1.3980787335907223,
+    "headroom": 1.9864417733279909,
+    "length_reduction": 0.026892539203130936
+   },
+   "mixed": {
+    "uniform_gap": 26.37959225581449,
+    "headroom": 13.348216725951291,
+    "length_reduction": 1.8350939862215392
+   },
+   "policy": {
+    "uniform_gap": 25.054833239919226,
+    "headroom": 16.39292867220629,
+    "length_reduction": 2.2833766983487505,
+    "probe_headroom": 10.090953942888664,
+    "probe_length_reduction": 1.4184706492592745
+   }
+  },
+  "SYMNCO": {
+   "indist": {
+    "uniform_gap": 1.1907609028315533,
+    "headroom": 2.493636237616168,
+    "length_reduction": 0.02959802900441652
+   },
+   "mixed": {
+    "uniform_gap": 15.934942791742513,
+    "headroom": 11.751858479032018,
+    "length_reduction": 1.1345176483750452
+   },
+   "policy": {
+    "uniform_gap": 17.930300466647566,
+    "headroom": 15.68948236796092,
+    "length_reduction": 1.595348776385909,
+    "probe_headroom": 10.403263321302246,
+    "probe_length_reduction": 1.0689044167082722
+   }
+  },
+  "POMO": {
+   "indist": {
+    "uniform_gap": 9.192530036494412,
+    "headroom": 0.6714554020690725,
+    "length_reduction": 0.05950761658500554
+   },
+   "mixed": {
+    "uniform_gap": 15.107602818754563,
+    "headroom": 0.5032775688969056,
+    "length_reduction": 0.006473892309489435
+   },
+   "policy": {
+    "uniform_gap": 14.866495835585813,
+    "headroom": 0.5050863687555109,
+    "length_reduction": 0.0023783148605981347,
+    "probe_headroom": -0.15656688820543144,
+    "probe_length_reduction": -0.03344461530018026
+   }
+  }
+ }
+}

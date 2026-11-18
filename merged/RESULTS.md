@@ -73,3 +73,38 @@ The probe is m samples from [0:200], charged against the budget and kept. Statis
 - At m = 40, medmin gives 9.21 (AM) and 9.51 (SymNCO); CV gives 4.22 and 4.65.
 - The single-feature medmin rule matches the preprint's learned policy (10.46 / 12.07) and beats CV with a clear margin. So the learned policy is not needed.
 - On POMO, every charged rule loses slightly. This supports "do not allocate where the workload does not disturb the solver."
+
+## Successive-halving baseline (`sh_baseline.py`, `sh_baseline.json`), policy collection
+
+Successive halving (SH) uses the same accounting as the probe rules: decisions use only samples from [0:200], every sample is charged, and scoring uses exact curves on [200:1000]. An optional floor is given to every instance first. Half of the remaining budget is then spent in halving rounds. The rest goes to the survivors, and any overflow above the cap goes to the most recently dropped instances, so no budget is lost while there is room.
+
+Gain over uniform (%), with the paired difference against the probe rule ((median − min)/median, m = 20):
+
+| Solver | Probe rule | SH medmin, floor 0 | SH medmin, floor 20 | SH medmin, floor 50 | SH "improvement" score, floor 20 |
+|---|---|---|---|---|---|
+| AM | 10.09 [7.54, 12.89] | −0.46 (diff −10.55 [−19.41, 0.05]) | 6.08 [0.38, 12.45] (diff −4.01 [−8.34, 1.01]) | 1.52 (diff −8.57 [−12.03, −5.51]) | −18.84 |
+| SymNCO | 10.40 [8.61, 12.14] | 9.20 (diff −1.20 [−9.21, 1.90]) | 10.02 [5.98, 13.23] (diff −0.39 [−3.27, 1.79]) | 6.50 (diff −3.91 [−7.20, 2.00]) | −21.18 |
+| POMO | −0.16 [−0.27, −0.02] | −22.34 | −7.63 [−8.22, −6.98] | −3.10 | −9.22 |
+
+- **No SH variant beats the one-shot probe rule.** The best SH variant (medmin score, floor 20) ties with it on SymNCO and is 4 points lower on AM; neither difference is significant.
+- **SH is much more variable**, with wide intervals, and **much more harmful when there is nothing to gain**: −7.6 against −0.2 on POMO.
+- The reason is structural. SH concentrates the budget on a few survivors (30–60 of 240), which suits finding a single best item but not minimising a sum over all instances.
+- An earlier version of the script lost the overflow above the 400 cap and reported −17 to −40%. That was an implementation artefact, fixed above.
+
+## Reviewer-driven extras (`extras.py`, 2026-11-18)
+
+**Tour length.** Mean tour-length reduction of the optimal reallocation:
+- In distribution: about 0.03% for AM and Sym-NCO.
+- Mixed collection: 1.84% (AM) and 1.14% (Sym-NCO).
+- Policy collection oracle: 2.28% and 1.60%. The probe rule achieves 1.42% and 1.07%.
+- Uniform gaps: in distribution 1.2–1.4% (POMO under sampling 9.2%); mixed 16–26%.
+
+**Budget sweep (u = 25, 50, 100, 200; C2A and C2B).**
+- spread | level excludes zero in 23 of 24 cells. AM ranges 0.76–0.89 (cluster) and 0.32–0.50 (size); Sym-NCO 0.63–0.90 and 0.42–0.61.
+- The exception is size/POMO at u = 200: +0.08 [−0.02, +0.20].
+- The level term keeps its sign pattern at every budget for AM and Sym-NCO; AM's cluster-knob interval at u = 25 includes zero.
+
+**Disjoint workloads.** 24 blocks of 10 instances are paired at random into 12 disjoint workloads of 20, with 1,000 pairings per cell.
+- Median partial r is 0.65–0.75 for AM and Sym-NCO, and 0.51–0.73 for POMO.
+- r is positive in ≥ 98% of pairings, and in ≥ 99% for AM and Sym-NCO.
+- The permutation test gives p < 0.05 in 72–92% of pairings for AM and Sym-NCO.

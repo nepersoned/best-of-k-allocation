@@ -15,6 +15,8 @@ reanalysis.py      paper-1 headroom; paper-2 spread/level/composition endpoints;
 reanalysis2.py     absolute-unit scale check (test U); charged probe rules
 paired_label.py    paired bootstrap: probe rule minus label rule
 estimator_sim.py   estimator accuracy and null at the paper settings (Appendix B)
+sh_baseline.py     successive-halving baseline vs the probe rule
+extras.py          tour-length translation, budget sweep, disjoint-workload test
 make_figures.py    the five figures of the merged paper
 results/           JSON output of the scripts above
 figures/           figures (.pdf, .png)
